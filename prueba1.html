@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Prueba 1</title>
+        <script type="application/javascript">
+            
+            var name = prompt("Introduce el nombre del usuario: ");
+            var dolares = prompt("Introduce la cantidad que desea en dolares: ");
+            var cambio = prompt("Introduce el tipo de cambio de MN a dolares: ");
+            var phras = capitalizeFirstLetter(name)+" necesita ahorra $"+ (dolares*cambio) + " MN";
+            
+            alert(phras);        
+
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="phras1"></div>
+    </body>
+    <script>
+        document.getElementById("phras1").innerHTML = phras;
+    </script>
+</html>
