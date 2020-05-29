@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Piedra, Papel o Tijeras</title>
+    </head>
+    <body>
+        <header>
+            <center><h1>Piedra, Papel o Tijeras</h1></center>
+        </header>
+        <section class="select-section1">
+            <form id="gamer-form1">
+                <h2>Jugador 1 : </h2><label id="jugador1"></label>
+                <label for="paper-input" onclick="ocultaSeccion2()">oculta seccion 2 <input id="paper-input" name="selection" type="radio"></label>
+                <br>
+                <label onclick="mostrarSeccion2()">mostrar seccion 2</label>
+            </form>            
+        </section>
+        <section class="select-section2">
+            <h2>Jugador 2 :</h2><label id="jugador2"></label>
+        </section>
+        <section class="select-section3">
+            <h2>Jugador 3 :</h2><label id="jugador3"></label>
+            <label onclick="regresar()">Regresar</label>
+        </section>
+        <footer>
+            <h3>Pie de pagina</h3>
+        </footer>
+        <script src="js/javascript.js"></script>
+    </body>
+
+</html>
