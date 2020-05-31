@@ -3,15 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
         <title>Piedra, Papel o Tijeras</title>
     </head>
-    <body>
+    <body onload="startGame()">
         <header>
             <center><h1>Piedra, Papel o Tijeras</h1></center>
         </header>
         <section class="select-section1">
             <form id="gamer-form1">
-                <h2>Jugador 1 : Ricardo</h2><label id="jugador1"></label>
+                <h2>Jugador 1 : <label id="jugador1"></label></h2>
                 <label for="ston-input" onclick="mostrarSeccion2()">Piedra <input id="ston-input" name="selection" type="radio" value="piedra"></label>
                 <br>
                 <br>
@@ -28,7 +29,7 @@
         </section>
         <section class="select-section2" style="display: none;">
             <form id="gamer-form2">
-                <h2>Jugador 2 : Barry</h2><label id="jugador2"></label>
+                <h2>Jugador 2 : <label id="jugador2"></label></h2>
                 <label for="ston-input" onclick="validarGanador()">Piedra <input id="ston-input" name="selection" type="radio" value="piedra"></label>
                 <br>
                 <br>
@@ -48,11 +49,11 @@
             <label onclick="regresar()">Regresar</label>
         </section>
         <footer class="footer-class" style="display: none;">
-            <h3>Resultado del encuentro: </h3><h2 id="footerWinner" > </h2>
-            <br>
-            <label onclick="showAll()">Mostrar opciones seleccionadas</label>
-            <br>
-            <label onclick="regresar()">Regresar</label>
+            <h3>Resultado del encuentro: </h3><hr><h2 id="footerWinner" > </h2>
+            <hr>
+            <h1><label onclick="showAll()">Mostrar opciones seleccionadas</label></h1>
+            <hr>
+            <h1><label onclick="regresar()">Regresar</label></h1>
         </footer>
         <script src="js/javascript.js"></script>
     </body>

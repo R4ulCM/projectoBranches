@@ -14,33 +14,70 @@ const footer = document.querySelector('.footer-class');
 const jugador1 = document.querySelector('#gamer-form1');
 const jugador2 = document.querySelector('#gamer-form2');
 const jugador3 = document.querySelector('#gamer-form3');
-var valorJugadorUno = "";
-var valorJugadorDos = "";
 var gamerWinner = "";
+var datosGame = [];
+var letras="abcdefghyjklmnñopqrstuvwxyz";
+
+function startGame(){    
+    let valueInput = true;
+    let cont = 1;
+    let nameGamer;
+    do{
+        nameGamer = prompt("Introduce el nombre del jugador "+cont+": ");
+        if(typeof(nameGamer) == 'object'){
+            seccion1.style.display='none';
+            break;
+        }
+        valueInput = ValidaInput('string', nameGamer);
+        if(valueInput){
+            datosGame.push([CapitalizeFirstLetter(nameGamer), ""]);
+            cont++;
+        }        
+    }while(cont<=2);    
+    for (var i = 0; i < datosGame.length; i++) {
+        GetElement('jugador'+(i+1)).innerHTML = datosGame[i][0];
+    }
+}
+
+function ValidaInput(typeTxt, valueTxt){
+    if(typeTxt == 'string' && valueTxt.length >= 3){
+        valueTxt = valueTxt.toLowerCase();
+        for(i=0; i<valueTxt.length; i++){
+            if (letras.indexOf(valueTxt.charAt(i),0)!=-1){
+                return true;
+            }
+        }
+        alert("El dato introducido no es valido ("+valueTxt+")");
+        return false;
+    }else{
+        alert("El dato introducido no es valido o no cuenta con la cantidad minima de caracteres ("+valueTxt+")");
+        return false;
+    }
+}
+
+function GetElement(name){
+    return document.getElementById(name);
+}
+
+function CapitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function mostrarSeccion2(callback){
     seccion2.style.display="flex";
     seccion1.style.display="none";
-    let valorUno = OtorgarValorJugadorUno(function(valorJugadorUno){
-        console.log('Jugador(Ricardo): '+valorJugadorUno);
-    });
-}
-
-function OtorgarValorJugadorUno(callback){
-    valorJugadorUno = jugador1.selection.value;
-    callback(valorJugadorUno);
-}
-
-function OtorgarValorJugadorDos(callback){
-    valorJugadorDos = jugador2.selection.value;
-    callback(valorJugadorDos);
+    datosGame[0][1] = jugador1.selection.value;
+    ImprimeValor("Jugador "+datosGame[0][0]+": "+datosGame[0][1]);
 }
 
 function validarGanador(){
-    let valorUno = OtorgarValorJugadorDos(function(valorJugadorDos){
-        console.log('Jugador(Barry): '+valorJugadorDos);
-    });
-    evaluarPartidas('Ricardo', valorJugadorUno, 'Barry', valorJugadorDos)
+    datosGame[1][1] = jugador2.selection.value;
+    ImprimeValor("Jugador "+datosGame[1][0]+": "+datosGame[1][1]);
+    evaluarPartidas(datosGame[0][0], datosGame[0][1], datosGame[1][0], datosGame[1][1])
+}
+
+function ImprimeValor(value){
+    console.log(value);
 }
 
 function evaluarPartidas(nameGamerUno, seleccionUno, nameGamerDos, seleccionDos){
