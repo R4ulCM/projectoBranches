@@ -11,21 +11,48 @@
         </header>
         <section class="select-section1">
             <form id="gamer-form1">
-                <h2>Jugador 1 : </h2><label id="jugador1"></label>
-                <label for="paper-input" onclick="ocultaSeccion2()">oculta seccion 2 <input id="paper-input" name="selection" type="radio"></label>
+                <h2>Jugador 1 : Ricardo</h2><label id="jugador1"></label>
+                <label for="ston-input" onclick="mostrarSeccion2()">Piedra <input id="ston-input" name="selection" type="radio" value="piedra"></label>
                 <br>
-                <label onclick="mostrarSeccion2()">mostrar seccion 2</label>
+                <br>
+                <br>
+                <label for="paper-input" onclick="mostrarSeccion2()">Papel <input id="paper-input" name="selection" type="radio" value="papel"></label>
+                <br>
+                <br>
+                <br>
+                <label for="scissors-input" onclick="mostrarSeccion2()">Tijera <input id="scissors-input" name="selection" type="radio" value="tijera"></label>
+                <br>
+                <br>
+                <br>
             </form>            
         </section>
-        <section class="select-section2">
-            <h2>Jugador 2 :</h2><label id="jugador2"></label>
+        <section class="select-section2" style="display: none;">
+            <form id="gamer-form2">
+                <h2>Jugador 2 : Barry</h2><label id="jugador2"></label>
+                <label for="ston-input" onclick="validarGanador()">Piedra <input id="ston-input" name="selection" type="radio" value="piedra"></label>
+                <br>
+                <br>
+                <br>
+                <label for="paper-input" onclick="validarGanador()">Papel <input id="paper-input" name="selection" type="radio" value="papel"></label>
+                <br>
+                <br>
+                <br>
+                <label for="scissors-input" onclick="validarGanador()">Tijera <input id="scissors-input" name="selection" type="radio" value="tijera"></label>
+                <br>
+                <br>
+                <br>
+            </form>
         </section>
-        <section class="select-section3">
+        <section class="select-section3" style="display: none;">
             <h2>Jugador 3 :</h2><label id="jugador3"></label>
             <label onclick="regresar()">Regresar</label>
         </section>
-        <footer>
-            <h3>Pie de pagina</h3>
+        <footer class="footer-class" style="display: none;">
+            <h3>Resultado del encuentro: </h3><h2 id="footerWinner" > </h2>
+            <br>
+            <label onclick="showAll()">Mostrar opciones seleccionadas</label>
+            <br>
+            <label onclick="regresar()">Regresar</label>
         </footer>
         <script src="js/javascript.js"></script>
     </body>
