@@ -131,9 +131,8 @@ function evaluarPartidas(nameGamerUno, seleccionUno, nameGamerDos, seleccionDos)
         alert("Error en la matrix!!!");
     }
 
-    alert(gamerWinner);
     seccion2.style.display="none";
-    footer.style.display="flex";
+    seccion3.style.display="flex";
     document.getElementById('footerWinner').innerHTML = gamerWinner;
 
 }
@@ -145,4 +144,8 @@ function showAll(){
 
 function regresar(){
     location.reload();
+}
+
+function CambioDeColor(){
+    seccion2.style.background="black";
 }
