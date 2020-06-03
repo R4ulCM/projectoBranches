@@ -1,12 +1,3 @@
-/*
-(function() {
-    for (let number of arguments) {
-      
-      const seccion$number = document.querySelector('.select-section'+number);
-    }
-  })(1, 2, 3);
-*/
-
 const seccion1 = document.querySelector('.select-section1');
 const seccion2 = document.querySelector('.select-section2');
 const seccion3 = document.querySelector('.select-section3');
