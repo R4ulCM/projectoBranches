@@ -4,43 +4,66 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+        <link rel="icon" type="image/png" href="img/encabezado.png" />
         <title>Piedra, Papel o Tijeras</title>
     </head>
     <body onload="startGame()">
         <header class="cabecera">
-            <img src="img/gamer01.jpg">
+            <img src="img/titulo.png">
             <h1>Piedra, Papel o Tijeras</h1>
-            <img src="img/gamer01.jpg">
+            <img src="img/titulo.png">
         </header>
         <section class="select-section1">
             <form id="gamer-form1">
                 <h2>Jugador 1 : <label id="jugador1"></label></h2>
-                <label class="pick" for="ston-input" onclick="mostrarSeccion2()">
-                    <img src="img/gamer02.jpg" alt="piedra">
-                        <br>
-                        Piedra
-                        <input id="ston-input" name="selection" type="radio" value="piedra"></label>
-                <label class="pick" for="paper-input" onclick="mostrarSeccion2()">Papel <input id="paper-input" name="selection" type="radio" value="papel"></label>
-                <label class="pick" for="scissors-input" onclick="mostrarSeccion2()">Tijera <input id="scissors-input" name="selection" type="radio" value="tijera"></label>
+                <label class="pick" for="scissors-input" onclick="mostrarSeccion2()">
+                    <img src="img/piedra.jpg" alt="piedra">
+                    <br>
+                    Piedra
+                    <input id="ston-input" name="selection" type="radio" value="piedra">
+                </label>
+                <label class="pick" for="scissors-input" onclick="mostrarSeccion2()">
+                    <img src="img/papel.jpg" alt="papel">
+                    <br>
+                    Papel
+                    <input id="paper-input" name="selection" type="radio" value="papel">
+                </label>
+                <label class="pick" for="scissors-input" onclick="mostrarSeccion2()">
+                    <img src="img/tijeras.jpg" alt="tijera">
+                    <br>
+                    Tijera
+                    <input id="scissors-input" name="selection" type="radio" value="tijera"></label>
             </form>            
         </section>
         <section class="select-section2" style="display: none;">
-            <form id="gamer-form2">
+            <div id="gamer-form2">
                 <h2>Jugador 2 : <label id="jugador2"></label></h2>
-                <label for="ston-input" onclick="validarGanador()">Piedra <input id="ston-input" name="selection" type="radio" value="piedra"></label>
-                <label for="paper-input" onclick="validarGanador()">Papel <input id="paper-input" name="selection" type="radio" value="papel"></label>
-                <label for="scissors-input" onclick="validarGanador()">Tijera <input id="scissors-input" name="selection" type="radio" value="tijera"></label>
-            </form>
+                <label class="pick" onclick="mostrarSeccion3('piedra')">
+                    <img src="img/piedra.jpg" alt="piedra">
+                    <br>
+                    Piedra
+                </label>
+                <label class="pick" onclick="mostrarSeccion3('papel')">
+                    <img src="img/papel.jpg" alt="papel">
+                    <br>
+                    Papel
+                </label>
+                <label class="pick" onclick="mostrarSeccion3('tijera')">
+                    <img src="img/tijeras.jpg" alt="tijera">
+                    <br>
+                    Tijera
+                </label>
+            </div>
         </section>
         <section class="select-section3" style="display: none;">
             <h3>Resultado del encuentro: </h3><hr><h2 id="footerWinner" > </h2>
             <br>
-            <h1><label onclick="showAll()">Mostrar opciones seleccionadas</label></h1>
+            <h1><label onclick="showAll()">->Mostrar opciones seleccionadas</label></h1>
             <br>
-            <h1><label onclick="regresar()">Regresar</label></h1>
+            <h1><label onclick="regresar()">->Regresar</label></h1>
         </section>
         <footer class="footer-class">
-            <h3>Pie de pagina</h3></h2>
+            <h6>❂Creada por: Carlo Raúl Martínez Álvarez❂</h6>
         </footer>
         <script src="js/javascript.js"></script>
     </body>

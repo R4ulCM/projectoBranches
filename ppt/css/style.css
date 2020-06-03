@@ -1,12 +1,5 @@
-body {
-    /* background-image: url("../img/font.jpg"); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* color: rgb(253, 253, 253); */
-}
-
 *{
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .cabecera {
@@ -40,15 +33,18 @@ body {
 }
 
 .select-section1 {
-    background-color: blue;
+    background-color: darkcyan;
+    border: 1px solid black;
 }
 
 .select-section2 {
-    background-color: chartreuse;
+    background-color: tomato;
+    border: 1px solid black;
 }
 
 .select-section3 {
-    background-color: darkgoldenrod;
+    background-color: chartreuse;
+    border: 1px solid black;
 }
 
 .select-section1 img {
@@ -59,6 +55,7 @@ body {
     cursor: pointer;
     display: inline-block;
     width: 300px;
+    height: 300px;
     vertical-align: top;
     padding: 20px;
     text-align: center;
@@ -66,8 +63,34 @@ body {
     opacity: 0.6;
 }
 
+.pick img {
+    width: 200px;
+    height: 200px;
+}
+
 .pick:hover {
     border: 1px dashed yellow;
     transform: scale(1.4);
     opacity: 1;
+}
+
+.footer-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-class:hover {
+    color: yellowgreen;
+    border: 2px dashed greenyellow;
+    transform: scale(1.4);
+}
+
+.select-section3 h1:hover {
+    transform: scale(1.4);
 }

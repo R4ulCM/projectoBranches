@@ -63,15 +63,18 @@ function CapitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function mostrarSeccion2(callback){
+function mostrarSeccion2(){
     seccion2.style.display="flex";
     seccion1.style.display="none";
     datosGame[0][1] = jugador1.selection.value;
     ImprimeValor("Jugador "+datosGame[0][0]+": "+datosGame[0][1]);
 }
 
-function validarGanador(){
-    datosGame[1][1] = jugador2.selection.value;
+
+function mostrarSeccion3(porperty){
+    seccion2.style.display="none";
+    seccion3.style.display="flex";
+    datosGame[1][1] = porperty;
     ImprimeValor("Jugador "+datosGame[1][0]+": "+datosGame[1][1]);
     evaluarPartidas(datosGame[0][0], datosGame[0][1], datosGame[1][0], datosGame[1][1])
 }
@@ -131,8 +134,6 @@ function evaluarPartidas(nameGamerUno, seleccionUno, nameGamerDos, seleccionDos)
         alert("Error en la matrix!!!");
     }
 
-    seccion2.style.display="none";
-    seccion3.style.display="flex";
     document.getElementById('footerWinner').innerHTML = gamerWinner;
 
 }
