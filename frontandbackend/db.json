@@ -3,6 +3,14 @@
         {
             "id":0,
             "name":"Carlo Martinez"
+        },
+        {
+            "id":1,
+            "name":"Mijael Pimentel"
+        },
+        {
+            "id":2,
+            "name":"Alebrto Escalona"
         }
     ]
 }
