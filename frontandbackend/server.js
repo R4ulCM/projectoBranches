@@ -5,12 +5,18 @@ const cors = require('cors');
 const db = require('./db.json');
 const br = require('./br.json');
 
+app.use(cors());
+
+const api = require('./api');
+
+app.use('/api',api);
+
 app.listen(port,function(){
     console.log("Inicia Servidor... con el puerto: "+port);
     console.log("http://localhost:"+port);
 });
 
-app.use(cors());
+/*
 app.use(express.json());
 
 app.get('/api/contact',getUserGeneral);
@@ -45,3 +51,4 @@ function getBranSingle(request, response){
         response.status(404).send({error:'No se han encontrado datos relacionados ('+id+')'});
     }
 }
+*/
